@@ -1,0 +1,38 @@
+<div class="dashboard">
+  <h1 class="title">🚦 AGV Dashboard</h1>
+
+  <div class="grid">
+    <div *ngFor="let agv of agvs | keyvalue" class="card">
+      <h2 class="card-title">🚗 {{ agv.key }}</h2>
+
+      <!-- Status -->
+      <p><b>Status:</b> 
+        <span [ngClass]="{
+          'status-active': agv.value.payload.status === 'ACTIVE',
+          'status-inactive': agv.value.payload.status === 'INACTIVE'
+        }">
+          {{ agv.value.payload.status }}
+        </span>
+      </p>
+
+      <!-- Position -->
+      <p><b>Position:</b> ({{ agv.value.payload.position_x }}, {{ agv.value.payload.position_y }})</p>
+
+      <!-- Battery -->
+      <p><b>Battery:</b> {{ agv.value.payload.battery_charge | number:'1.0-0' }}%</p>
+
+      <!-- Battery Bar -->
+      <div class="battery-bar">
+        <div 
+          class="battery-fill" 
+          [style.width.%]="agv.value.payload.battery_charge"
+          [ngClass]="{
+            'battery-high': agv.value.payload.battery_charge > 50,
+            'battery-medium': agv.value.payload.battery_charge <= 50 && agv.value.payload.battery_charge > 20,
+            'battery-low': agv.value.payload.battery_charge <= 20
+          }">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

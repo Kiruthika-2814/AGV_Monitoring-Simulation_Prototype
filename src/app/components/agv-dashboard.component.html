@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="title">🚦 AGV Dashboard</h1>
+
+  <div *ngIf="serials().length === 0">Waiting for data...</div>
+
+  <div class="grid">
+    <div *ngFor="let sn of serials()" class="card">
+      <h2 class="agv-title">🚗 {{ sn }}</h2>
+
+      <!-- Status -->
+      <p>
+        <b>Status:</b>
+        <span [ngClass]="{
+          'status-active': agvs[sn].status === 'ACTIVE',
+          'status-inactive': agvs[sn].status === 'INACTIVE',
+          'status-error': agvs[sn].status === 'ERROR'
+        }">
+          {{ agvs[sn].status }}
+        </span>
+      </p>
+
+      <!-- Position -->
+      <p><b>Position:</b> ({{ agvs[sn].position_x }}, {{ agvs[sn].position_y }})</p>
+
+      <!-- Battery -->
+      <p><b>Battery:</b> {{ agvs[sn].battery_charge }}%</p>
+      <div class="battery-bar">
+        <div class="battery-fill"
+             [style.width.%]="agvs[sn].battery_charge"
+             [ngClass]="{
+               'battery-high': agvs[sn].battery_charge > 50,
+               'battery-medium': agvs[sn].battery_charge <= 50 && agvs[sn].battery_charge > 20,
+               'battery-low': agvs[sn].battery_charge <= 20
+             }"></div>
+      </div>
+
+      <!-- Show all fields -->
+      <div *ngFor="let key of objectKeys(agvs[sn])">
+        <p><b>{{ key }}:</b> {{ agvs[sn][key] | json }}</p>
+      </div>
+    </div>
+  </div>
+</div>
