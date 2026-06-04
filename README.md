@@ -1,59 +1,84 @@
-# AgvUi
+# Real-Time AGV Monitoring & Simulation Prototype
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+A prototype Industrial IoT dashboard application that simulates Automated Guided Vehicles (AGVs) and visualizes real-time telemetry data using MQTT, Socket.IO, Node.js, and Angular.
 
-## Development server
+This project was created to explore real-time communication workflows, event-driven systems, and live dashboard monitoring concepts commonly used in smart warehouse and industrial automation environments.
 
-To start a local development server, run:
+## Features
 
-```bash
+* Real-time AGV telemetry simulation
+* MQTT-based publish/subscribe communication
+* Live dashboard updates using Socket.IO
+* Dynamic AGV status monitoring
+* Battery level visualization
+* Position tracking simulation
+* Responsive Angular dashboard UI
+* Event-driven architecture implementation
+
+## Tech Stack
+
+### Frontend
+
+* Angular
+* TypeScript
+* HTML
+* CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* Socket.IO
+
+### Messaging & Real-Time Communication
+
+* MQTT
+* WebSockets
+
+## Project Architecture
+
+AGV Simulator (Publisher)
+→ Publishes AGV telemetry data using MQTT
+
+MQTT Subscriber Server
+→ Receives MQTT messages and broadcasts updates using Socket.IO
+
+Angular Dashboard
+→ Displays live AGV status, battery levels, and operational data in real time
+
+The simulator publishes:
+
+* AGV status
+* Position coordinates
+* Battery percentage
+* Driving state
+* Load information
+* Timestamp updates
+
+ Learning Objectives
+
+This prototype was built to gain practical understanding of:
+
+* MQTT messaging protocol
+* Real-time event-driven systems
+* Socket.IO communication
+* Industrial IoT monitoring concepts
+* Frontend-backend integration
+* Live dashboard visualization
+
+## Run the Project
+
+### Start AGV Simulator
+node mqtt-simulator.js
+
+### Start MQTT Subscriber Server
+node mqtt-subscriber-server.js
+
+### Start Angular Frontend
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📚 Disclaimer
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is a proof-of-concept prototype created for learning and experimentation purposes to understand real-time communication and Industrial IoT workflows.
