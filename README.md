@@ -77,8 +77,4 @@ node mqtt-subscriber-server.js
 ### Start Angular Frontend
 ng serve
 
----
-
-## 📚 Disclaimer
-
 This project is a proof-of-concept prototype created for learning and experimentation purposes to understand real-time communication and Industrial IoT workflows.
