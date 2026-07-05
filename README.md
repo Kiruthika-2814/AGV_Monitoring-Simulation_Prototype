@@ -1,39 +1,35 @@
 # Real-Time AGV Monitoring & Simulation Prototype
 
-A prototype Industrial IoT dashboard application that simulates Automated Guided Vehicles (AGVs) and visualizes real-time telemetry data using MQTT, Socket.IO, Node.js, and Angular.
+A proof-of-concept Industrial IoT application that simulates Automated Guided Vehicle (AGV) telemetry and visualizes real-time operational data through a web dashboard.
 
-This project was created to explore real-time communication workflows, event-driven systems, and live dashboard monitoring concepts commonly used in smart warehouse and industrial automation environments.
+The project demonstrates event-driven communication using MQTT and Socket.IO to simulate telemetry streaming between distributed system components. It was developed to explore Industrial IoT architectures, real-time messaging, and live monitoring concepts used in smart warehouses and manufacturing environments.
 
-## Features
+## Key Features
 
-* Real-time AGV telemetry simulation
-* MQTT-based publish/subscribe communication
-* Live dashboard updates using Socket.IO
-* Dynamic AGV status monitoring
-* Battery level visualization
-* Position tracking simulation
-* Responsive Angular dashboard UI
-* Event-driven architecture implementation
+- Simulates real-time AGV telemetry
+- MQTT publish/subscribe messaging
+- Socket.IO-based live dashboard updates
+- Battery level and operational status monitoring
+- Position tracking simulation
+- Event-driven architecture
+- Responsive Angular dashboard
 
 ## Tech Stack
 
-### Frontend
+Frontend
+- Angular
+- TypeScript
+- HTML
+- CSS
 
-* Angular
-* TypeScript
-* HTML
-* CSS
+Backend
+- Node.js
+- Express.js
 
-### Backend
-
-* Node.js
-* Express.js
-* Socket.IO
-
-### Messaging & Real-Time Communication
-
-* MQTT
-* WebSockets
+Real-Time Communication
+- MQTT
+- Socket.IO
+- WebSockets
 
 ## Project Architecture
 
@@ -55,26 +51,44 @@ The simulator publishes:
 * Load information
 * Timestamp updates
 
- Learning Objectives
+## Learning Outcomes
 
-This prototype was built to gain practical understanding of:
+- Industrial IoT architecture
+- MQTT publish/subscribe messaging
+- Event-driven communication
+- Socket.IO integration
+- Frontend-backend integration
+- Real-time dashboard development
 
-* MQTT messaging protocol
-* Real-time event-driven systems
-* Socket.IO communication
-* Industrial IoT monitoring concepts
-* Frontend-backend integration
-* Live dashboard visualization
+## Future Enhancements
 
-## Run the Project
+- Multiple AGV simulation
+- Route optimization
+- Historical telemetry storage
+- User authentication
+- Alert and notification system
+- Cloud deployment
 
 ### Start AGV Simulator
+
+```bash
 node mqtt-simulator.js
+```
 
 ### Start MQTT Subscriber Server
+
+```bash
 node mqtt-subscriber-server.js
+```
 
 ### Start Angular Frontend
-ng serve
 
-This project is a proof-of-concept prototype created for learning and experimentation purposes to understand real-time communication and Industrial IoT workflows.
+```bash
+ng serve
+```
+## License
+
+This project was developed for educational and learning purposes.
+## Note
+
+This project is a proof-of-concept prototype developed for learning purposes to explore Industrial IoT concepts, MQTT messaging, and real-time communication workflows.
